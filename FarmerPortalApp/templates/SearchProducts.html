@@ -1,0 +1,64 @@
+{% load static %}
+<html>
+<head>
+<title>Farmer's Portal</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+ <script LANGUAGE="Javascript" >
+function validate(){
+	var y=document.forms["f1"]["t2"].value;
+	if(y == null || y==""){
+		window.alert("Quantity must be enter");
+		document.f1.t2.focus();
+		return false;
+	}
+	if(isNaN(c)){
+		window.alert("Please enter valid quantity number");
+		document.f1.t4.focus();
+		return false;
+	}
+	
+	return true;
+}
+		
+	
+	</script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<center><font size="4" color="yellow">A Study of Blockchain Technology in Farmer's Portal</font></center>
+		</div>
+		<div id="slogan">
+			
+		</div>
+	</div>
+	<div id="menu">
+		<ul><center>
+      <li><a href="{% url 'BrowseProducts' %}">Browse Products</a></li>
+	  <li><a href="{% url 'index' %}">Logout</a></li>		
+		</center></ul>
+<br class="clearfix" />
+				</div>
+			
+	<div id="splash">
+		<img class="pic" src="{% static 'images/investor.jpg' %}" width="870" height="230" alt="" />
+	</div>	
+			<center>
+	{% csrf_token %}<br/>
+   <h3><b>Search Product Screen</b></h3>
+   
+	<font size="" color="black"><center></center></font>
+						
+						<table align="center" width="80" >
+			 
+		  
+		{{ data|safe }}
+
+						</div>	
+					
+				</div>
+				
+	</body>
+</html>

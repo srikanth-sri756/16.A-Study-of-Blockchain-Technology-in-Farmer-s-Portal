@@ -1,0 +1,36 @@
+{% load static %}
+<html>
+<head>
+<title>Farmer's Portal</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<center><font size="4" color="yellow">A Study of Blockchain Technology in Farmer's Portal</font></center>
+		</div>
+		<div id="slogan">
+			
+		</div>
+	</div>
+	<div id="menu">
+		<ul><center>
+	  <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'Login' %}">Login</a></li>
+      <li><a href="{% url 'Register' %}">Register Here</a></li>
+			
+		</center></ul>
+		<br class="clearfix" />
+	</div>
+	<div id="splash">
+		<img class="pic" src="{% static 'images/investor.jpg' %}" width="870" height="230" alt="" />
+	</div>
+	<br/>
+	<p align="justify"><font size="3" style="font-family: Comic Sans MS" color="black">
+		Abstract:- Blockchain is a method in which a confirmation of a transaction is kept by means of a crypto-currency. The record is maintained transversely, linking several computers in a peer to peer network. Contracts, transactions, and the records of them define the economic system of a country. They set boundaries and provide security to the assets. Considering the features of blockchain such as immutability and maintaining the footage of transaction details, this paper highlights the usage of blockchain technology with farmer's portal that keep the footage of selling and buying information of crops.</p>
+<p align="justify"><font size="3" style="font-family: Comic Sans MS" color="black">The proposed solution uses the python as a programming language in integration with the blockchain system that will benefit the farmers or vendors and individuals by preserving the contract of trade. An interface for the farmers is designed using a python programming language in addition with blockchain technology, which is used to store the information related to seller, buyer, selling and buying an item and total value transacted.
+</p>
+</body>
+</html>

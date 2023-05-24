@@ -1,0 +1,104 @@
+{% load static %}
+<html>
+<head>
+<title>Farmer's Portal</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+ <script LANGUAGE="Javascript" >
+function validate(){
+	var x=document.forms["f1"]["t1"].value;
+	var y=document.forms["f1"]["t2"].value;
+	var c=document.forms["f1"]["t3"].value;
+	var e=document.forms["f1"]["t4"].value;
+	var a=document.forms["f1"]["t5"].value;
+	
+	if(x == null || x==""){
+		window.alert("Crop name must be enter");
+		document.f1.t1.focus();
+		return false;
+	}
+	if(y == null || y==""){
+		window.alert("Quantity must be enter");
+		document.f1.t2.focus();
+		return false;
+	}
+	if(isNaN(y)){
+		window.alert("Please enter valid quantity number");
+		document.f1.t2.focus();
+		return false;
+	}
+	if(c == null || c==""){
+		window.alert("Price must be enter");
+		document.f1.t3.focus();
+		return false;
+	}
+	
+	if(e == null || e==""){
+		window.alert("Product description must be enter");
+		document.f1.t4.focus();
+		return false;
+	}
+	if(image == null || image==""){
+		window.alert("Product image must be upload");
+		document.f1.t5.focus();
+		return false;
+	}
+	return true;
+}
+		
+	
+	</script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<center><font size="4" color="yellow">A Study of Blockchain Technology in Farmer's Portal</font></center>
+		</div>
+		<div id="slogan">
+			
+		</div>
+	</div>
+	<div id="menu">
+		<ul><center>
+      <li><a href="{% url 'AddProduct' %}">Add New Products</a></li>
+	  <li><a href="{% url 'UpdateQuantity' %}">Update Product Quantity</a></li>
+	  <li><a href="{% url 'ViewOrders' %}">View Consumer Orders</a></li>
+	  <li><a href="{% url 'index' %}">Logout</a></li>		
+		</center></ul>
+<br class="clearfix" />
+				</div>
+			
+	<div id="splash">
+		<img class="pic" src="{% static 'images/investor.jpg' %}" width="870" height="230" alt="" />
+	</div>	
+			<center>
+<form name="f1" method="post" action={% url 'AddProductAction' %} enctype="multipart/form-data" OnSubmit="return validate()">
+	{% csrf_token %}<br/>
+   <h3><b>Add New Product Screen</b></h3>
+   
+	<font size="" color="black"><center>{{ data|safe }}</center></font>
+						
+						<table align="center" width="80" >
+			 <tr><td><font size="" color="black">Crop&nbsp;Name</font></td><td><input type="text" name="t1" style="font-family: Comic Sans MS" size="30"/></td></tr>
+         
+		  
+		<tr><td><font size="" color="black">Quantity</font></td><td><input type="text" name="t2" style="font-family: Comic Sans MS" size="20"/></td></tr>
+
+		<tr><td><font size="" color="black">Crop&nbsp;Price</font></td><td><input type="text" name="t3" style="font-family: Comic Sans MS" size="20"/></td></tr>
+
+		<tr><td><font size="" color="black">Crop&nbsp;Description</font></td><td><input type="text" name="t4" style="font-family: Comic Sans MS" size="80"/></td></tr>
+
+		<tr><td><font size="" color="black">Crop&nbsp;Image</font></td><td><input type="file" name="t5" style="font-family: Comic Sans MS" size="60"/></td></tr>
+		
+		         
+			<tr><td></td><td><input type="submit" value="Add Products">
+			</td>
+			</table>
+			<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				</div>	
+					
+				</div>
+				
+	</body>
+</html>
